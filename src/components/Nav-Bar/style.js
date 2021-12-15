@@ -9,6 +9,8 @@ export const Container = styled.div`
     top: 0;
     position: sticky;
     background-color: #e6efed;
+    z-index: 2;
+    border-bottom: 1px solid black;
 `
 export const Left = styled.div`
     flex: 1;
