@@ -1,4 +1,10 @@
+import {
+    FavoriteBorderOutlined,
+    SearchOutlined,
+    ShoppingCartOutlined,
+} from '@material-ui/icons'
 import React from 'react'
+import { Link } from 'react-router-dom'
 import { Container, Image, Wrapper, Icon, Content } from './productStyle'
 function Product({ item }) {
     return (
@@ -6,9 +12,17 @@ function Product({ item }) {
             <Wrapper>
                 <Image alt="" />
                 <Content>
-                    <Icon>1</Icon>
-                    <Icon>2</Icon>
-                    <Icon>3</Icon>
+                    <Link to="/product">
+                        <Icon>
+                            <ShoppingCartOutlined />
+                        </Icon>
+                    </Link>
+                    <Icon>
+                        <SearchOutlined />
+                    </Icon>
+                    <Icon>
+                        <FavoriteBorderOutlined />
+                    </Icon>
                 </Content>
             </Wrapper>
         </Container>
