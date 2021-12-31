@@ -6,10 +6,9 @@ import { SendOutlined } from '@material-ui/icons'
 function News() {
     return (
         <Container>
-            <Typography variant="h2">News Letter</Typography>
-            <Typography variant="h5">Get our new update products</Typography>
+            <Typography variant="h5">Get our new updated products</Typography>
             <InputContainer>
-                <Input placeholder="Email" />
+                <Input placeholder="Add your Email" />
                 <Button style={{ backgroundColor: 'teal' }}>
                     <SendOutlined />
                 </Button>

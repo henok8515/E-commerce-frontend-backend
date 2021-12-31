@@ -1,34 +1,61 @@
 import styled from 'styled-components'
-
+import { mobile } from '../../responsive'
 export const Container = styled.div`
     display: flex;
-    justify-content: space-around;
+
+    flex: 1;
+    height: 70vh;
+    margin-bottom: 40px;
+    justify-content: center;
+    position: relative;
 `
 export const Wrapper = styled.div`
-    height: 70vh;
-    flex: 1;
-    background-color: wheat;
-    margin: 50px 50px;
+    height: 60vh;
+    width: 80%;
     display: flex;
     justify-content: center;
     align-items: center;
-    flex-direction: column;
-    object-fit: cover;
     border-radius: 20px;
-    opacity: 1;
     background-size: cover;
+    border: 1px solid black;
+    background: url(${(props) => props.background});
+    background-size: cover;
+
+    ${mobile({
+        display: 'flex',
+        flexWrap: 'wrap',
+    })}
 `
 export const Image = styled.img`
     border-radius: 20px 20px 0 0;
     height: 100%;
     width: 100%;
-    background: url(${(props) => props.background});
+
     object-fit: cover;
     background-size: cover;
 `
 export const Content = styled.div`
+    /* display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center; */
+    opacity: 0;
+    transition: all 1s ease;
+    &:hover {
+        opacity: 1;
+        border-radius: 20px;
+        background-color: rgb(0, 0, 0, 0.8);
+        cursor: pointer;
+    }
+`
+export const Cards = styled.div`
+    height: 100%;
+    width: 100%;
+    margin: 40px 40px;
+    text-align: center;
     display: flex;
     flex-direction: column;
+    align-self: center;
     justify-content: center;
     align-items: center;
 `

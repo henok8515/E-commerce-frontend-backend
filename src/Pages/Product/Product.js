@@ -1,6 +1,6 @@
 import React from 'react'
-import Navbar from '../components/Nav-Bar/NavBar'
-import Footer from '../components/Footer/Footer'
+import Navbar from '../../components/Nav-Bar/NavBar'
+import Footer from '../../components/Footer/Footer'
 import {
     Container,
     Image,

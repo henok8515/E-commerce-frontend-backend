@@ -1,14 +1,15 @@
 import { Typography } from '@material-ui/core'
 import React from 'react'
-import NavBar from '../components/Nav-Bar/NavBar'
-import Products from '../components/Products/Products'
-import Footer from '../components/Footer/Footer'
+import NavBar from '../../components/Nav-Bar/NavBar'
+import Products from '../../components/Products/Products'
+import Footer from '../../components/Footer/Footer'
 import {
     Container,
     Select,
     Option,
     SortedContainer,
     FilterContainer,
+    Name,
 } from './ProductListStyle'
 
 function ProductList() {
@@ -17,7 +18,7 @@ function ProductList() {
             <NavBar />
             <Container>
                 <FilterContainer>
-                    <Typography>filter product :</Typography>
+                    <Name>filter product :</Name>
                     <Select>
                         <Option disabled selected>
                             Color
@@ -36,7 +37,7 @@ function ProductList() {
                     </Select>
                 </FilterContainer>
                 <SortedContainer>
-                    <Typography>sorted by :</Typography>
+                    <Name>sorted by :</Name>
                     <Select>
                         <Option disabled selected>
                             Newst

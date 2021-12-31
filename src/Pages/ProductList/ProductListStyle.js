@@ -1,5 +1,5 @@
 import styled from 'styled-components'
-
+import { mobile } from '../../responsive'
 export const Container = styled.div`
     display: flex;
     justify-content: space-between;
@@ -11,6 +11,9 @@ export const Select = styled.select`
     padding: 10px 10px;
     outline: none;
     margin-left: 10px;
+    ${mobile({
+        padding: '5px 5px',
+    })}
 `
 
 export const Option = styled.option``
@@ -23,4 +26,9 @@ export const SortedContainer = styled.div`
     display: flex;
     justify-content: center;
     align-items: center;
+`
+export const Name = styled.h5`
+    ${mobile({
+        display: 'none',
+    })}
 `

@@ -1,5 +1,5 @@
 import styled from 'styled-components'
-
+import { mobile } from '../../responsive'
 export const Container = styled.div`
     height: 80px;
     margin-top: 10px;
@@ -8,9 +8,14 @@ export const Container = styled.div`
     align-items: center;
     top: 0;
     position: sticky;
-    background-color: #e6efed;
+    background-color: white;
     z-index: 2;
     border-bottom: 1px solid black;
+    ${mobile({
+        height: '50px',
+        position: 'sticky',
+        top: 0,
+    })}
 `
 export const Left = styled.div`
     flex: 1;
@@ -18,6 +23,9 @@ export const Left = styled.div`
     justify-content: flex-start;
     margin-left: 20px;
     align-items: center;
+    ${mobile({
+        justifyContent: 'center',
+    })}
 `
 export const Center = styled.div`
     flex: 1;
@@ -27,11 +35,14 @@ export const Center = styled.div`
     display: flex;
 `
 export const Right = styled.div`
-    flex: 1;
+    flex: 0.2;
     display: flex;
-    justify-content: flex-end;
+    justify-content: space-around;
     align-items: center;
     margin-right: 30px;
+    ${mobile({
+        display: 'none',
+    })}
 `
 export const Language = styled.span`
     padding-right: 20px;

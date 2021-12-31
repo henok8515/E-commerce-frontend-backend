@@ -17,6 +17,6 @@ export const InputContainer = styled.div`
     width: 100%;
 `
 export const Input = styled.input`
-    width: 30%;
+    width: 100%;
     outline: none;
 `

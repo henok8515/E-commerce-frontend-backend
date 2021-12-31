@@ -1,14 +1,17 @@
 import React from 'react'
 import { popularProducts } from '../../Data'
 import Product from './Product'
-import { Container } from './productsStyle'
+import { Container, Title } from './productsStyle'
 function Products() {
     return (
-        <Container>
-            {popularProducts.map((item) => (
-                <Product key={item.id} item={item} />
-            ))}
-        </Container>
+        <Title>
+            <h1>your collection</h1>
+            <Container>
+                {popularProducts.map((item) => (
+                    <Product key={item.id} item={item} />
+                ))}
+            </Container>
+        </Title>
     )
 }
 

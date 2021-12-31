@@ -1,8 +1,8 @@
-import { Badge, Button, TextField, Typography } from '@material-ui/core'
+import { Badge, Button, Typography } from '@material-ui/core'
 import { ShoppingCartOutlined } from '@material-ui/icons'
 import React from 'react'
 import { Link } from 'react-router-dom'
-import { Container, Left, Center, Right, Language } from './style'
+import { Container, Left, Right } from './style'
 function NavBar() {
     return (
         <Container>
@@ -13,18 +13,25 @@ function NavBar() {
                     </Typography>
                 </Link>
             </Left>
-            <Center>
+            {/* <Center>
                 <Language></Language>
                 <TextField
                     placeholder="Search"
                     style={{ textAlign: 'center' }}
                 />
-            </Center>
+            </Center> */}
             <Right>
                 <Badge badgeContent={4} color="success">
-                    <ShoppingCartOutlined />
+                    <Link style={{ textDecoration: 'none' }} to="/cart">
+                        <ShoppingCartOutlined />
+                    </Link>
                 </Badge>
-                <Link to="/signin">
+                <Link
+                    style={{
+                        textDecoration: 'none',
+                    }}
+                    to="/signin"
+                >
                     <Button>Sign Out</Button>
                 </Link>
             </Right>

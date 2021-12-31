@@ -1,6 +1,5 @@
 import React from 'react'
-import Register from './Register'
-import Signin from './Signin'
+import Signin from './Signin/Signin'
 const Login = () => {
     return (
         <div style={{ display: 'flex' }}>

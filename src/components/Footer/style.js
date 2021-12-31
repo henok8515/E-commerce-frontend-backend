@@ -2,31 +2,28 @@ import styled from 'styled-components'
 
 export const Container = styled.div`
     display: flex;
+    border-top: 5px solid teal;
+    justify-content: space-around;
+    display: none;
 `
 export const Left = styled.div`
-    flex: 1;
-    justify-content: space-around;
+    justify-content: center;
     align-items: center;
     height: 50vh;
     margin: 10px 40px;
     display: flex;
+    flex: 4;
     flex-direction: column;
 `
 export const Center = styled.div`
-    flex: 1;
-    margin: 10px 40px;
     display: flex;
     flex-direction: column;
-    justify-content: center;
-    align-items: center;
+    text-align: start;
     text-transform: capitalize;
 `
 export const Right = styled.div`
-    flex: 1;
-    margin: 10px 40px;
     display: flex;
-    justify-content: center;
-    align-items: center;
+
     flex-direction: column;
 `
 export const IconContainer = styled.div`
@@ -45,12 +42,20 @@ export const Icon = styled.div`
 `
 export const List = styled.li`
     text-align: start;
-    margin: 10px 10px;
     font-size: 20px;
     list-style-type: none;
+    margin-top: 10px;
     cursor: pointer;
+    transition: all 1s ease;
+    &:hover {
+        transform: scale(1.1);
+        color: grey;
+    }
 `
-export const ListContainer = styled.div``
+export const ListContainer = styled.div`
+    display: flex;
+    flex-direction: column;
+`
 export const Info = styled.div`
     display: flex;
     justify-content: flex-start;
@@ -61,5 +66,16 @@ export const InfoContainer = styled.div`
     flex-direction: column;
 `
 export const Title = styled.h3`
-    margin-left: 10px;
+    font-weight: 200;
+    margin-left: 20px;
+`
+export const Bottom = styled.div`
+    height: 70px;
+    background-color: teal;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    width: 100vw;
+    overflow: hidden;
+    display: none;
 `

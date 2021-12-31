@@ -1,11 +1,16 @@
 import styled from 'styled-components'
-
+import { mobile } from '../../responsive'
 export const Container = styled.div`
     display: flex;
     align-self: center;
     width: 70vw;
     margin: 20px 20px;
     height: 80vh;
+
+    ${mobile({
+        display: 'flex',
+        flexDirection: 'column',
+    })}
 `
 export const Image = styled.img``
 
@@ -16,7 +21,11 @@ export const InfoContainer = styled.div`
     width: 100px;
 `
 
-export const Info = styled.p``
+export const Info = styled.p`
+    ${mobile({
+        display: 'none',
+    })}
+`
 export const FilterContainer = styled.div`
     display: flex;
     justify-content: space-around;
@@ -54,3 +63,4 @@ export const ItemContainer = styled.div`
     margin: 20px 20px;
     align-items: center;
 `
+export const Name = styled.h2``

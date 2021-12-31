@@ -1,29 +1,36 @@
 import { Button } from '@material-ui/core'
 import React from 'react'
 import { Link } from 'react-router-dom'
-import { Data } from '../../Data'
-import { Container, Wrapper, Content, Image } from './style'
-function Card() {
+
+import { Container, Wrapper, Cards, Content } from './style'
+function Card({ data }) {
     return (
         <Container>
-            {Data.map((data) => (
-                <Wrapper>
-                    <Image background={data.imgUrl} />
+            <Wrapper background={data.imgUrl}>
+                <Cards>
                     <Content>
-                        <h1>{data.title}</h1>
-                        <Link to="productList">
+                        <h2 style={{ color: 'white' }}>{data.title}</h2>
+                        <Link
+                            style={{
+                                textDecoration: 'none',
+                                width: '80%',
+                            }}
+                            to="productList"
+                        >
                             <Button
                                 style={{
-                                    backgroundColor: 'black',
+                                    backgroundColor: 'grey',
                                     color: 'white',
+                                    width: '100%',
                                 }}
+                                fullWidth
                             >
                                 Shop Now
                             </Button>
                         </Link>
                     </Content>
-                </Wrapper>
-            ))}
+                </Cards>
+            </Wrapper>
         </Container>
     )
 }
