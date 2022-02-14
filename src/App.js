@@ -6,6 +6,7 @@ import Product from './Pages/Product/Product'
 import Login from './Pages/Login'
 import Register from './Pages/Register/Register'
 import Cart from './Pages/Cart/Cart'
+import Payment from './components/Payment/Payment'
 function App() {
     return (
         <div
@@ -20,6 +21,7 @@ function App() {
                 <Route path="/signin" element={<Login />} />
                 <Route path="/signup" element={<Register />} />{' '}
                 <Route path="/cart" element={<Cart />} />
+                <Route path="/payment" element={<Payment />} />
             </Routes>
         </div>
     )

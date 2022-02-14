@@ -2,6 +2,7 @@ import { Button, Typography } from '@material-ui/core'
 import React from 'react'
 import { Link } from 'react-router-dom'
 import NavBar from '../../components/Nav-Bar/NavBar'
+import './style.css'
 import {
     Container,
     HeaderContainer,
@@ -130,12 +131,17 @@ const Cart = () => {
                             <P>subtotal</P>
                             <P>$80</P>
                         </Summery>
-                        <Button
-                            fullWidth
-                            style={{ backgroundColor: 'blue', color: 'white' }}
-                        >
-                            CheckOut Now
-                        </Button>
+                        <Link to="/payment">
+                            <Button
+                                fullWidth
+                                style={{
+                                    backgroundColor: 'blue',
+                                    color: 'white',
+                                }}
+                            >
+                                CheckOut Now
+                            </Button>
+                        </Link>
                     </RightContainer>
                 </Wrapper>
             </Container>
