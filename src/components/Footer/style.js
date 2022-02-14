@@ -4,7 +4,7 @@ export const Container = styled.div`
     display: flex;
     border-top: 5px solid teal;
     justify-content: space-around;
-    display: none;
+    background-color: lightblue;
 `
 export const Left = styled.div`
     justify-content: center;
@@ -14,6 +14,7 @@ export const Left = styled.div`
     display: flex;
     flex: 4;
     flex-direction: column;
+    background-color: lightblue;
 `
 export const Center = styled.div`
     display: flex;

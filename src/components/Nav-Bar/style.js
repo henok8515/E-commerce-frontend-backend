@@ -15,6 +15,8 @@ export const Container = styled.div`
         height: '50px',
         position: 'sticky',
         top: 0,
+        overFlow: 'hidden',
+        width: '90%',
     })}
 `
 export const Left = styled.div`
@@ -23,9 +25,7 @@ export const Left = styled.div`
     justify-content: flex-start;
     margin-left: 20px;
     align-items: center;
-    ${mobile({
-        justifyContent: 'center',
-    })}
+    ${mobile({})}
 `
 export const Center = styled.div`
     flex: 1;
@@ -46,4 +46,16 @@ export const Right = styled.div`
 `
 export const Language = styled.span`
     padding-right: 20px;
+`
+export const Navigation = styled.div`
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+`
+export const Bar = styled.span`
+    cursor: pointer;
+    border: 1px solid black;
+    width: 40px;
+    margin: 5px 10px;
+    ${mobile({})}
 `

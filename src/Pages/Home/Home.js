@@ -17,7 +17,6 @@ const Home = () => {
             <CardList />
             <hr />
             <Products />
-
             <Footer />
         </div>
     )

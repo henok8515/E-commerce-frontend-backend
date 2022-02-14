@@ -6,7 +6,6 @@ export const Container = styled.div`
     align-items: center;
     text-transform: capitalize;
     flex-direction: column;
-    background-color: white;
     height: 40vh;
     justify-content: space-evenly;
     margin: 20px 20px;

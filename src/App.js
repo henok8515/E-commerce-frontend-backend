@@ -8,7 +8,11 @@ import Register from './Pages/Register/Register'
 import Cart from './Pages/Cart/Cart'
 function App() {
     return (
-        <div>
+        <div
+            style={{
+                overflow: 'hidden',
+            }}
+        >
             <Routes>
                 <Route path="/" element={<Home />} />
                 <Route path="/productList" element={<ProductList />} />

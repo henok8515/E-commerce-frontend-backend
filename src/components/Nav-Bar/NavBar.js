@@ -2,7 +2,7 @@ import { Badge, Button, Typography } from '@material-ui/core'
 import { ShoppingCartOutlined } from '@material-ui/icons'
 import React from 'react'
 import { Link } from 'react-router-dom'
-import { Container, Left, Right } from './style'
+import { Bar, Container, Left, Navigation, Right } from './style'
 function NavBar() {
     return (
         <Container>
@@ -35,6 +35,11 @@ function NavBar() {
                     <Button>Sign Out</Button>
                 </Link>
             </Right>
+            <Navigation>
+                <Bar />
+                <Bar />
+                <Bar />
+            </Navigation>
         </Container>
     )
 }

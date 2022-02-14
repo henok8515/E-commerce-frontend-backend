@@ -17,10 +17,12 @@ export const Wrapper = styled.div`
     align-items: center;
     border-radius: 20px;
     background-size: cover;
-    border: 1px solid black;
     background: url(${(props) => props.background});
     background-size: cover;
-
+    transition: all 1s ease;
+    &:hover {
+        transform: scale(1.1);
+    }
     ${mobile({
         display: 'flex',
         flexWrap: 'wrap',
@@ -41,12 +43,12 @@ export const Content = styled.div`
     align-items: center; */
     opacity: 0;
     transition: all 1s ease;
-    &:hover {
+    /* &:hover {
         opacity: 1;
         border-radius: 20px;
         background-color: rgb(0, 0, 0, 0.8);
         cursor: pointer;
-    }
+    } */
 `
 export const Cards = styled.div`
     height: 100%;

@@ -48,7 +48,6 @@ export const Title = styled.h1`
     text-align: center;
     font-family: 'Comfortaa', cursive;
     text-transform: capitalize;
-    text-decoration: underline;
     font-size: 3em;
 `
 export const CardContainer = styled.div`

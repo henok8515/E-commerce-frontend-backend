@@ -7,27 +7,22 @@ export const Container = styled.div`
     display: flex;
     text-align: start;
     align-items: center;
-    justify-content: center;
+    justify-content: space-between;
     align-items: center;
     ${mobile({
         display: 'none',
     })}
 `
-export const ImgContainer = styled.div`
+export const ImgContainer = styled.img`
     flex: 1;
     justify-content: center;
     align-items: center;
     overflow: hidden;
     height: 100%;
-
-    border-radius: 50%;
-    background-color: lightblue;
 `
 export const InfoContainer = styled.div`
     flex: 1;
     margin-left: 40px;
-    border-radius: 50%;
-    background-color: lightgreen;
     display: flex;
     height: 100%;
     align-self: center;

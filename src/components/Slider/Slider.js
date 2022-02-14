@@ -1,19 +1,19 @@
 import { Button, Typography } from '@material-ui/core'
 import React from 'react'
 import { Container, ImgContainer, InfoContainer, Image } from './style'
-import image from './PngItem_831128.png'
+import image from './undraw_shopping_app_flsj.svg'
 function Slider() {
     return (
         <Container>
-            <ImgContainer>
-                <Image src={image} />
-            </ImgContainer>
+            <ImgContainer src={image} />
             <InfoContainer>
-                <Typography variant="h2">Summer Sale</Typography>
-                <Typography variant="h6">
-                    Don't compormise on style! get flat 30% off for new arrivals
-                </Typography>
-                <Button style={{ backgroundColor: 'black', color: 'white' }}>
+                <Typography variant="h2">50 % Discount </Typography>
+                <Button
+                    style={{
+                        backgroundColor: 'lightslategray',
+                        marginTop: '20px',
+                    }}
+                >
                     Shop Now
                 </Button>
             </InfoContainer>
