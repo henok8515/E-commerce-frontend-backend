@@ -1,5 +1,5 @@
-import { ArrowDropDown, Favorite, ShoppingCart } from '@mui/icons-material';
-import { Badge, TextField, Typography } from '@mui/material';
+import { ArrowDropDown, ShoppingCart } from '@mui/icons-material';
+import { Badge, TextField } from '@mui/material';
 import React, { useEffect } from 'react';
 import { useState } from 'react';
 import { Link, useLocation } from 'react-router-dom';
