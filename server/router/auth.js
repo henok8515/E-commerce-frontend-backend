@@ -2,14 +2,16 @@ const express = require('express')
 const User = require('../model/userSchema')
 const router = express.Router()
 const CryptoJS = require('crypto-js')
+const _ = require('lodash')
 const jwt = require('jsonwebtoken')
 router.get('/', (req, res) => {
     res.json('hello')
 })
-router.post('/', async (req, res) => {
+router.post('/register', async (req, res) => {
     const newUser = new User({
         userName: req.body.userName,
         email: req.body.email,
+        isAdmin: req.body.isAdmin,
         password: CryptoJS.AES.encrypt(
             req.body.password,
             process.env.CRYPTO_SEC
@@ -17,7 +19,7 @@ router.post('/', async (req, res) => {
     })
     try {
         const savedUser = await newUser.save()
-        res.json(savedUser)
+        res.json(_.pick(savedUser, ['userName', 'email']))
     } catch (error) {
         res.status(500).json(error.message)
     }
@@ -40,7 +42,7 @@ router.post('/login', async (req, res) => {
                 id: user._id,
                 isAdmin: user.isAdmin,
             },
-            process.env.JWT_SEC,
+            '12345678',
             { expiresIn: '3d' }
         )
         res.status(200).json({ ...other, accesToken })

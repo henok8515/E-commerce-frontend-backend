@@ -3,12 +3,14 @@ const mongoose = require('mongoose')
 const dotenv = require('dotenv')
 const authRoute = require('./router/auth')
 const userRoute = require('./router/user')
+const productRoute = require('./router/products')
 dotenv.config()
 // app must be declared on the top
 app = express()
 app.use(express.json())
 app.use('/api/user', authRoute)
-app.use('/user', userRoute)
+app.use('/api', userRoute)
+app.use('/api/products', productRoute)
 mongoose
     .connect(process.env.MONGO_URL)
     .then(() => {
