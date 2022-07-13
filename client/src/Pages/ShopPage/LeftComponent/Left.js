@@ -1,13 +1,6 @@
 import { Slider, Typography } from '@mui/material';
-import React from 'react';
-import {
-    Container,
-    Wrapper,
-    P,
-    Input,
-    ColorContainer,
-    WrapperRow
-} from './style';
+import React, { useState } from 'react';
+import { Container, Wrapper, WrapperRow } from './style';
 
 const Data = [
     {
@@ -55,23 +48,23 @@ const Brand = [
     'Nike'
 ];
 function Left() {
+    const [filter, setFilter] = useState({});
+    const handleFilter = (e) => {
+        const value = e.target.value;
+        setFilter({ ...filter, [e.target.name]: value });
+    };
+    console.log(filter);
     return (
         <Container>
             <Wrapper>
                 <Typography underline variant="h5">
                     Categorys
                 </Typography>
-                {Data.map((data) => (
-                    <div
-                        style={{
-                            display: 'flex',
-                            justifyContent: 'space-between'
-                        }}
-                    >
-                        <P>{data.name}</P>
-                        <P>{data.quantity}</P>
-                    </div>
-                ))}
+                <select name="catagories" onChange={handleFilter}>
+                    {Data.map((data) => (
+                        <option>{data.name}</option>
+                    ))}
+                </select>
             </Wrapper>
             <Wrapper>
                 <Typography
@@ -82,23 +75,20 @@ function Left() {
                 >
                     Size
                 </Typography>
-                {Size.map((size) => (
-                    <div
-                        style={{
-                            display: 'flex',
-                            marginTop: '5px'
-                        }}
-                    >
-                        <Input type="checkbox" />
-                        <Typography>{size}</Typography>
-                    </div>
-                ))}
+                <select name="size" onChange={handleFilter}>
+                    {Size.map((size) => (
+                        <option>{size}</option>
+                    ))}
+                </select>
             </Wrapper>
-            <Typography variant="h5">Color</Typography>
+
             <WrapperRow>
-                {Color.map((color) => (
-                    <ColorContainer color={color}></ColorContainer>
-                ))}
+                <Typography variant="h5">Color</Typography>
+                <select name="color" onChange={handleFilter}>
+                    {Color.map((color) => (
+                        <option>{color}</option>
+                    ))}
+                </select>
             </WrapperRow>
             <Wrapper>
                 <Typography
@@ -109,45 +99,39 @@ function Left() {
                 >
                     Brand
                 </Typography>
-                {Brand.map((brand) => (
-                    <div
-                        style={{
-                            display: 'flex',
-                            marginTop: '5px'
-                        }}
-                    >
-                        <Input type="checkbox" />
-                        <Typography>{brand}</Typography>
-                    </div>
-                ))}
+                <select name="brand" onChange={handleFilter}>
+                    {Brand.map((brand) => (
+                        <option>{brand}</option>
+                    ))}
+                </select>
             </Wrapper>
             <Wrapper>
-                <Typography
+                {/* <Typography
                     style={{
                         marginBottom: '20px'
                     }}
                     variant="h5"
                 >
                     Price
-                </Typography>
-                <div
+                </Typography> */}
+                {/* <div
                     style={{
                         marginBottom: '20px'
                     }}
-                >
-                    <Typography>
-                        Price Range{' '}
-                        <span
-                            style={{
-                                colr: 'red'
-                            }}
-                        >
-                            $100 - $200
-                        </span>
-                    </Typography>
-                </div>
+                > */}
+                {/* <Typography>
+                            Price Range{' '}
+                            <span
+                                style={{
+                                    colr: 'red'
+                                }}
+                            >
+                                $100 - $200
+                            </span>
+                        </Typography> */}
+                {/* </div>
 
-                <Slider />
+                <Slider /> */}
             </Wrapper>
         </Container>
     );
