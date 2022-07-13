@@ -1,15 +1,14 @@
 import styled from 'styled-components';
 
 export const Container = styled.div`
-    flex: 1;
-    margin: 10px 10px;
     display: flex;
-    padding-left: 40px;
-    flex-direction: column;
-    overflow: scroll;
+    align-items: center;
+    background-color: rebeccapurple;
+    justify-content: center;
+    /* overflow: scroll;
     ::-webkit-scrollbar {
         display: none;
-    }
+    } */
 `;
 export const Wrapper = styled.div`
     width: 80%;
@@ -32,7 +31,7 @@ export const ColorContainer = styled.div`
 `;
 export const WrapperRow = styled.div`
     display: flex;
-    justify-content: space-around;
+    flex-direction: column;
     width: 70%;
     margin: 10px 20px;
     color: f;

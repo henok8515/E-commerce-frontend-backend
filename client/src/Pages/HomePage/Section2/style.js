@@ -4,20 +4,18 @@ import banner1 from '../../../Assets/Images/banner-1.jpg';
 
 export const Container = styled.div`
     display: flex;
-
+    margin-top: 10px;
     align-items: center;
     justify-content: center;
 `;
 
 export const Card1 = styled.div`
-    width: 30%;
+    width: 35%;
     background-image: url(${banner1});
-
     display: flex;
-
     justify-content: center;
     align-items: center;
-    height: 60vh;
+    height: 80vh;
     padding: 20px;
 `;
 
@@ -27,13 +25,15 @@ export const SubCard = styled.div`
     border: solid 4px white;
     padding: 0 20px;
     height: 100%;
-
     display: flex;
-
     align-items: center;
+    transition: all 1s ease;
+    &:hover {
+        background-color: rgba(255, 255, 255, 0.5);
+    }
 `;
 export const Card2 = styled.div`
-    height: 44%;
+    height: 50%;
     width: 70vh;
     background-image: url(${(props) => props.bg});
     margin: 20px;

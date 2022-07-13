@@ -11,6 +11,7 @@ export const Container = styled.div`
     position: sticky;
     transition: all 1s ease;
     z-index: 3;
+    transition: all 1s ease;
 `;
 export const Navs = styled(Typography)`
     display: flex;
@@ -41,6 +42,7 @@ export const Logo = styled.div`
 export const SearchContainer = styled.div`
     display: flex;
     flex: 1;
+    transition: all 1s ease;
     color: white;
     justify-content: space-around;
     align-items: center;

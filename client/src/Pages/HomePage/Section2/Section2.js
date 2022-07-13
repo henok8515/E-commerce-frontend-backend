@@ -18,7 +18,10 @@ function Section2() {
                         </div>
                     </SubCard>
                 </Card1>
-                <div className="card-row-2" style={{ height: '70vh' }}>
+                <div
+                    className="card-row-2 flex flex-col justify-between"
+                    style={{ height: '85vh' }}
+                >
                     <Card2 bg={banner2}>
                         <div className="sub-card">
                             <p>Limited time only</p>
