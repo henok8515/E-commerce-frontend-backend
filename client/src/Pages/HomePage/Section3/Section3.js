@@ -48,6 +48,7 @@ export const cards = [
     // }
 ];
 
+let List = ['ALL', 'WOMEN', 'MEN', 'ACCESSORIES'];
 function Section3() {
     return (
         <>
@@ -60,12 +61,18 @@ function Section3() {
                         alignItems: 'center'
                     }}
                 >
-                    <h1 className="text-3xl font-bold">Trendy Products</h1>
-                    <ul style={{ display: 'flex' }}>
-                        <li>ALL</li>
-                        <li>WOMEN</li>
-                        <li>MEN</li>
-                        <li>ACCESSORIES</li>
+                    <h1 className="font-serif text-5xl mt-4 mb-7 font-bold ">
+                        Trendy Products
+                    </h1>
+                    <ul
+                        className="flex w-96 justify-around"
+                        style={{ display: 'flex' }}
+                    >
+                        {List.map((li) => (
+                            <li className="hover:underline cursor-pointer">
+                                {li}
+                            </li>
+                        ))}
                     </ul>
                 </div>
                 <div className="flex flex-wrap justify-center ">

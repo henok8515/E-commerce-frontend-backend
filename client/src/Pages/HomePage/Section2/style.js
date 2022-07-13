@@ -31,6 +31,9 @@ export const SubCard = styled.div`
     &:hover {
         background-color: rgba(255, 255, 255, 0.5);
     }
+    &:hover #child {
+        color: grey;
+    }
 `;
 export const Card2 = styled.div`
     height: 50%;
@@ -40,4 +43,5 @@ export const Card2 = styled.div`
     display: flex;
     align-items: center;
     justify-content: center;
+    transition: all 1s ease;
 `;
