@@ -2,12 +2,13 @@ import React from 'react';
 import image1 from '../../../Assets/Images/product1.jpg';
 import image2 from '../../../Assets/Images/product2.jpg';
 import image3 from '../../../Assets/Images/banner-4.jpg';
-
+import { Box2, Box1, Container } from './style';
+import './style.css';
 function Section5() {
     return (
         <>
-            <div className="flex justify-center m-5   h-screen ">
-                <div className="col-1 flex flex-col justify-center">
+            <Container className="flex justify-center m-2   h-screen ">
+                <Box1 className="col-1 flex flex-col justify-center">
                     <div className="flex flex-col ">
                         <p className="text-center text-red-800">SPECIAL</p>
                         <h1 className="text-center text-3xl">
@@ -38,19 +39,19 @@ function Section5() {
                             <span>Now $337.00</span>
                         </div>
                     </div>
-                </div>
-                <div className="col-2 m-5">
-                    <div
-                        className="h-full w-auto  flex flex-col justify-center p-5 text-white"
-                        style={{
-                            backgroundImage: `url(${image3})`,
-                            backgroundSize: 'contain',
+                </Box1>
+                <Box2
+                    style={{
+                        backgroundImage: `url(${image3})`,
+                        backgroundSize: 'cover',
 
-                            backgroundRepeat: 'no-repeat',
+                        backgroundRepeat: 'no-repeat',
 
-                            width: '500px'
-                        }}
-                    >
+                        width: '500px'
+                    }}
+                    className="col-2 "
+                >
+                    <div className="h-full w-auto  flex flex-col justify-center p-5   hover:border-4 text-white hover:text-black hover:border-black hover:bg-white hover:opacity-50 ">
                         {/* <img src={image3} alt="" /> */}
                         <p className="text-2xl font-extrabold">
                             Casual basics{'\n'} and trendy key pieces
@@ -65,8 +66,8 @@ function Section5() {
                         <p>$19.99-$48.00</p>
                     </div>
                     <div className="divide-y divide-blue-200"></div>
-                </div>
-            </div>
+                </Box2>
+            </Container>
         </>
     );
 }
