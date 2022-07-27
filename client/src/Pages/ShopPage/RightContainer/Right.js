@@ -1,5 +1,4 @@
 import { ShoppingCart, Star } from '@mui/icons-material';
-import { Button } from '@mui/material';
 import React from 'react';
 import {
     Container,
@@ -8,8 +7,10 @@ import {
     SecondDiv,
     ThirdDiv,
     Title,
-    SubTitle
+    SubTitle,
+    Buttons
 } from './style';
+import _ from 'lodash';
 const Data = [
     {
         price: '$20 - $30',
@@ -29,7 +30,7 @@ const Data = [
     },
     {
         price: '$70 - $80',
-        subTitle: 'Beige V neck button cardigan',
+        subTitle: 'Beige V neck buttonsButtons cardigan',
         id: 3,
         name: 'Hoodie',
         imgUrl: 'https://d-themes.com/angular/molla/server/uploads/product_2_1_f64862c43b.jpg',
@@ -67,7 +68,8 @@ const Data = [
         subTitle: 'Brown faux fur longline coat '
     }
 ];
-function Right() {
+
+function Right({ setCartItem, cartItem }) {
     return (
         <ParentContainer>
             {Data.map((data) => (
@@ -87,10 +89,15 @@ function Right() {
                                 alignItems: 'center'
                             }}
                         >
-                            <Star /> <Star /> <Star /> <Star /> <Star />
-                            <p>(5 review)</p>
+                            {_.times(5, (i) => (
+                                <Star key={i} />
+                            ))}
                         </div>
-                        <Button
+                        <Buttons
+                            onClick={(e) =>
+                                setCartItem(cartItem + 1) &&
+                                console.log(e.target)
+                            }
                             fullWidth
                             style={{
                                 border: '1px solid red',
@@ -99,7 +106,7 @@ function Right() {
                             }}
                         >
                             <ShoppingCart /> Add to Cart
-                        </Button>
+                        </Buttons>
                     </ThirdDiv>
                 </Container>
             ))}

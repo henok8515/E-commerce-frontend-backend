@@ -7,7 +7,6 @@ export const Container = styled.div`
 export const Wrapper = styled.div`
     display: flex;
     width: 100%;
-    flex-direction: column;
 `;
 export const TopContainer = styled.div`
     display: flex;

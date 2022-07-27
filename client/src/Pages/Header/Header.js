@@ -1,5 +1,5 @@
 import { ArrowDropDown, ShoppingCart } from '@mui/icons-material';
-import { Badge, TextField } from '@mui/material';
+import { Badge, TextField, Typography } from '@mui/material';
 import React, { useEffect } from 'react';
 import { useState } from 'react';
 import { Link, useLocation } from 'react-router-dom';
@@ -11,7 +11,7 @@ import {
     LogoImg,
     Container
 } from './style';
-function Header() {
+function Header({ cartItem }) {
     const [navBar, setNavColor] = useState(false);
     const [sideon, setSideOn] = useState(false);
 
@@ -41,7 +41,7 @@ function Header() {
         <Container
             className={
                 navBar
-                    ? 'h-20 z-10 top-0 sticky transition-all items-center border-solid flex align-middle bg-gray-700 text-white'
+                    ? 'h-20 z-10 top-0 sticky transition-all items-center border-solid flex align-middle bg-black text-white'
                     : 'h-20 z-10 top-0 sticky transition-all  items-center border-solid flex align-middle bg-transparent text-white'
             }
         >
@@ -53,7 +53,12 @@ function Header() {
                     }}
                     to="/"
                 >
-                    <LogoImg />
+                    <Typography
+                        color={navBar ? '#fffaff' : '#424b54'}
+                        variant="h2"
+                    >
+                        ጉሊት
+                    </Typography>
                 </Link>
             </Logo>
 
@@ -106,7 +111,7 @@ function Header() {
                         {/* <Link to="/login">SignOut</Link> */}
                         <Badge
                             className="ml-11"
-                            badgeContent={4}
+                            badgeContent={cartItem}
                             color="primary"
                         >
                             <Link
@@ -121,9 +126,9 @@ function Header() {
                         </Badge>
                     </div>
                 )}
-                {/* <button onClick={() => setSideOn((sideon) => !sideon)}>
-                    {sideon ? 's' : 'H'}
-                </button> */}
+                <div>
+                    <Link to="/login"> SignOut</Link>
+                </div>
             </SearchContainer>
         </Container>
     );

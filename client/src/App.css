@@ -2,5 +2,6 @@
 .app-container{
     background-image: url('./Assets/Images/slide-1.jpg');
     background-repeat: no-repeat;
+    overflow: hidden;
     }
     
