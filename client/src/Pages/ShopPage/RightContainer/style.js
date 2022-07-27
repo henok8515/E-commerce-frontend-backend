@@ -1,10 +1,12 @@
 import styled from 'styled-components';
+import { Button } from '@mui/material';
 
 export const Container = styled.div`
     display: grid;
     grid-template-columns: 1fr 2fr 1fr;
     grid-column-gap: 1em;
     grid-row-gap: 5em;
+    /* border: 1px solid black; */
 `;
 export const Content = styled.div`
     background-color: rgba(255, 255, 255, 0.8);
@@ -39,11 +41,12 @@ export const SecondDiv = styled.div`
     justify-content: center;
 `;
 export const ThirdDiv = styled.div`
-    height: 200px;
+    height: 110px;
     display: flex;
-    justify-content: center;
+    align-self: center;
+
+    justify-content: space-around;
     flex-direction: column;
-    align-items: center;
 `;
 export const Title = styled.p`
     text-align: start;
@@ -57,4 +60,11 @@ export const Title = styled.p`
 `;
 export const SubTitle = styled.p`
     font-size: 15px;
+`;
+export const Buttons = styled(Button)`
+    transition: all 1s ease;
+    color: white;
+    &:hover {
+        background-color: black;
+    }
 `;
