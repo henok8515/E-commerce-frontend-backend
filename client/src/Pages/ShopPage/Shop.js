@@ -1,10 +1,9 @@
 import { Typography } from '@mui/material';
 import React from 'react';
-import Center from './Center/Center';
 import Left from './LeftComponent/Left';
 import Right from './RightContainer/Right';
 import { Container, TopContainer, Wrapper } from './style';
-function Shop({ setCartItem, cartItem }) {
+function Shop() {
     return (
         <Container>
             <TopContainer>
@@ -15,7 +14,7 @@ function Shop({ setCartItem, cartItem }) {
             </TopContainer>
             <Wrapper>
                 <Left />
-                <Right setCartItem={setCartItem} cartItem={cartItem} />
+                <Right />
             </Wrapper>
         </Container>
     );

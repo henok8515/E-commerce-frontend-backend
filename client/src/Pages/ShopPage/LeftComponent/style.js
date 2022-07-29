@@ -2,16 +2,13 @@ import styled from 'styled-components';
 
 export const Container = styled.div`
     display: flex;
-    flex-direction: column;
     align-items: center;
-    flex: 1;
-    /* justify-content: center; */
-    text-align: start;
-    border-color: black;
-    overflow: scroll;
+    background-color: rebeccapurple;
+    justify-content: center;
+    /* overflow: scroll;
     ::-webkit-scrollbar {
         display: none;
-    }
+    } */
 `;
 export const Wrapper = styled.div`
     width: 80%;
@@ -35,7 +32,7 @@ export const ColorContainer = styled.div`
 export const WrapperRow = styled.div`
     display: flex;
     flex-direction: column;
-    width: 100%;
+    width: 70%;
     margin: 10px 20px;
     color: f;
 `;

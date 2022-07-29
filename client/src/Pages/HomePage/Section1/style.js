@@ -12,13 +12,13 @@ export const Container = styled.div`
     justify-content: center;
     align-items: center;
     height: 100vh;
-    width: 100vw;
+    width: 100%;
 `;
 
 export const BrandLogo = styled.div`
-    margin: 0;
     display: flex;
-    width: 100vw;
+    margin-top: 30px;
+    margin-top: 68px;
 `;
 export const H1 = styled.h1`
     font-family: 'Courier New', Courier, monospace;
