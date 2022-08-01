@@ -127,6 +127,7 @@ function Header() {
                 {/* <button onClick={() => setSideOn((sideon) => !sideon)}>
                     {sideon ? 's' : 'H'}
                 </button> */}
+                <Link to="/login">SignOut</Link>
             </SearchContainer>
         </Container>
     );
