@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React from 'react';
 import Home from './Pages/HomePage/Home';
 import Header from './Pages/Header/Header';
 import Footer from './Pages/Footer/Footer';
@@ -9,10 +9,9 @@ import CheckOut from './Pages/CheckOut/Checkout';
 import SignIn from './Pages/SigninAndSignup/SignIn/SignIn';
 import './App.css';
 import SignUp from './Pages/SigninAndSignup/SignUp/signUp';
-import axios from 'axios';
 import Product from './Pages/Products';
+
 function App() {
-    const [users, setUsers] = useState();
     let history = useLocation();
     // useEffect(() => {
     //     axios
@@ -26,6 +25,7 @@ function App() {
 
     return (
         <div className={history.pathname === '/' ? 'app-container' : 'app'}>
+            {/* {history.pathname === '/login ' || '/register' ? null : <Header />} */}
             <Header />
             <Routes>
                 <Route path="/" element={<Home />} />

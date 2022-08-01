@@ -11,11 +11,11 @@ function Products() {
 
     return (
         <div>
-            {/* {data.map((data) => (
+            {data.map((data) => (
                 <div className="flex">
                     <span>{data.id}</span> <p>{data.brand}</p>
                 </div>
-            ))} */}
+            ))}
             <Product />
         </div>
     );

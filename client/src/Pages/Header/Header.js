@@ -13,7 +13,7 @@ import {
 } from './style';
 function Header() {
     const [navBar, setNavColor] = useState(false);
-    const [sideon, setSideOn] = useState(false);
+    const [sideon] = useState(false);
 
     function usePageViews() {
         let location = useLocation();
@@ -104,21 +104,24 @@ function Header() {
                             className="text-white"
                         />
                         {/* <Link to="/login">SignOut</Link> */}
-                        <Badge
-                            className="ml-11"
-                            badgeContent={4}
-                            color="primary"
-                        >
-                            <Link
-                                style={{
-                                    textDecoration: 'none',
-                                    color: 'white'
-                                }}
-                                to="/       cart"
+
+                        <div className="">
+                            <Badge
+                                className="ml-11"
+                                badgeContent={3}
+                                color="primary"
                             >
-                                <ShoppingCart />
-                            </Link>
-                        </Badge>
+                                <Link
+                                    style={{
+                                        textDecoration: 'none',
+                                        color: 'white'
+                                    }}
+                                    to="/       cart"
+                                >
+                                    <ShoppingCart />
+                                </Link>
+                            </Badge>
+                        </div>
                     </div>
                 )}
                 {/* <button onClick={() => setSideOn((sideon) => !sideon)}>

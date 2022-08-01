@@ -9,7 +9,8 @@ router.get('/', (req, res) => {
 })
 router.post('/register', async (req, res) => {
     const newUser = new User({
-        userName: req.body.userName,
+        firstName: req.body.firstName,
+        lastName: req.body.lastName,
         email: req.body.email,
         isAdmin: req.body.isAdmin,
         password: CryptoJS.AES.encrypt(
@@ -21,7 +22,7 @@ router.post('/register', async (req, res) => {
         const savedUser = await newUser.save()
         res.json(_.pick(savedUser, ['userName', 'email']))
     } catch (error) {
-        res.status(500).json(error.message)
+        res.status(500).json(error.message, 'register error')
     }
 })
 
@@ -47,7 +48,7 @@ router.post('/login', async (req, res) => {
         )
         res.status(200).json({ ...other, accesToken })
     } catch (error) {
-        res.status(400).json(error.message)
+        res.status(400).json(error.message, 'login error')
     }
 })
 // router.put("/", (req, res) => {});
