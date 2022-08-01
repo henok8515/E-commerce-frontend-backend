@@ -1,5 +1,5 @@
 import { ArrowDropDown, ShoppingCart } from '@mui/icons-material';
-import { Badge, TextField, Typography } from '@mui/material';
+import { Badge, TextField } from '@mui/material';
 import React, { useEffect } from 'react';
 import { useState } from 'react';
 import { Link, useLocation } from 'react-router-dom';
@@ -11,7 +11,7 @@ import {
     LogoImg,
     Container
 } from './style';
-function Header({ cartItem }) {
+function Header() {
     const [navBar, setNavColor] = useState(false);
     const [sideon, setSideOn] = useState(false);
 
@@ -41,7 +41,7 @@ function Header({ cartItem }) {
         <Container
             className={
                 navBar
-                    ? 'h-20 z-10 top-0 sticky transition-all items-center border-solid flex align-middle bg-black text-white'
+                    ? 'h-20 z-10 top-0 sticky transition-all items-center border-solid flex align-middle bg-gray-700 text-white'
                     : 'h-20 z-10 top-0 sticky transition-all  items-center border-solid flex align-middle bg-transparent text-white'
             }
         >
@@ -53,12 +53,7 @@ function Header({ cartItem }) {
                     }}
                     to="/"
                 >
-                    <Typography
-                        color={navBar ? '#fffaff' : '#424b54'}
-                        variant="h2"
-                    >
-                        ጉሊት
-                    </Typography>
+                    <LogoImg />
                 </Link>
             </Logo>
 
@@ -111,7 +106,7 @@ function Header({ cartItem }) {
                         {/* <Link to="/login">SignOut</Link> */}
                         <Badge
                             className="ml-11"
-                            badgeContent={cartItem}
+                            badgeContent={4}
                             color="primary"
                         >
                             <Link
@@ -126,9 +121,9 @@ function Header({ cartItem }) {
                         </Badge>
                     </div>
                 )}
-                <div>
-                    <Link to="/login"> SignOut</Link>
-                </div>
+                {/* <button onClick={() => setSideOn((sideon) => !sideon)}>
+                    {sideon ? 's' : 'H'}
+                </button> */}
             </SearchContainer>
         </Container>
     );

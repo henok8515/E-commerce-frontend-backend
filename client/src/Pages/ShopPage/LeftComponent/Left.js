@@ -1,7 +1,7 @@
 import { Slider, Typography } from '@mui/material';
 import React, { useState } from 'react';
 import { Container, Wrapper, WrapperRow } from './style';
-import ArrowDropDownIcon from '@mui/icons-material/ArrowDropDown';
+
 const Data = [
     {
         name: 'Furniture',
@@ -57,94 +57,81 @@ function Left() {
     return (
         <Container>
             <Wrapper>
-                <div className="flex w-full justify-between">
-                    <Typography variant="h5">Catagories</Typography>
-                    <ArrowDropDownIcon />
-                </div>
-                <div name="catagories" onChange={handleFilter}>
+                <Typography underline variant="h5">
+                    Categorys
+                </Typography>
+                <select name="catagories" onChange={handleFilter}>
                     {Data.map((data) => (
-                        <div className="flex w-full justify-between">
-                            <p>{data.name}</p>
-                            <input type="checkbox" />
-                        </div>
+                        <option>{data.name}</option>
                     ))}
-                </div>
-            </Wrapper>
-            <Wrapper>
-                <div className="flex w-full justify-between">
-                    <Typography variant="h5">Size</Typography>
-                    <ArrowDropDownIcon />
-                </div>
-                <div name="size" onChange={handleFilter}>
-                    {Size.map((size) => (
-                        <div className="flex w-full justify-between">
-                            <p>{size}</p>
-                            <input type="checkbox" />
-                        </div>
-                    ))}
-                </div>
-            </Wrapper>
-
-            <Wrapper>
-                <div className="flex w-full justify-between">
-                    <Typography variant="h5">Color</Typography>
-                    <ArrowDropDownIcon />
-                </div>
-
-                <div className="m-0" name="color" onChange={handleFilter}>
-                    {Color.map((color) => (
-                        <div className="flex w-full justify-between">
-                            <p>{color}</p>
-                            <input type="checkbox" />
-                        </div>
-                    ))}
-                </div>
-            </Wrapper>
-            <Wrapper>
-                <div className="flex w-full justify-between">
-                    <Typography variant="h5">Brand</Typography>
-                    <ArrowDropDownIcon />
-                </div>
-                <div name="brand" onChange={handleFilter}>
-                    {Brand.map((brand) => (
-                        <div className="flex w-full justify-between">
-                            <p>{brand}</p>
-                            <input
-                                name={brand}
-                                type="checkbox"
-                                onClick={(e) => console.log(e.target)}
-                            />
-                        </div>
-                    ))}
-                </div>
+                </select>
             </Wrapper>
             <Wrapper>
                 <Typography
+                    style={{
+                        marginBottom: '10px'
+                    }}
+                    variant="h5"
+                >
+                    Size
+                </Typography>
+                <select name="size" onChange={handleFilter}>
+                    {Size.map((size) => (
+                        <option>{size}</option>
+                    ))}
+                </select>
+            </Wrapper>
+
+            <WrapperRow>
+                <Typography variant="h5">Color</Typography>
+                <select name="color" onChange={handleFilter}>
+                    {Color.map((color) => (
+                        <option>{color}</option>
+                    ))}
+                </select>
+            </WrapperRow>
+            <Wrapper>
+                <Typography
+                    style={{
+                        marginBottom: '10px'
+                    }}
+                    variant="h5"
+                >
+                    Brand
+                </Typography>
+                <select name="brand" onChange={handleFilter}>
+                    {Brand.map((brand) => (
+                        <option>{brand}</option>
+                    ))}
+                </select>
+            </Wrapper>
+            <Wrapper>
+                {/* <Typography
                     style={{
                         marginBottom: '20px'
                     }}
                     variant="h5"
                 >
                     Price
-                </Typography>
-                <div
+                </Typography> */}
+                {/* <div
                     style={{
                         marginBottom: '20px'
                     }}
-                >
-                    <Typography>
-                        Price Range{' '}
-                        <span
-                            style={{
-                                colr: 'red'
-                            }}
-                        >
-                            $100 - $200
-                        </span>
-                    </Typography>
-                </div>
+                > */}
+                {/* <Typography>
+                            Price Range{' '}
+                            <span
+                                style={{
+                                    colr: 'red'
+                                }}
+                            >
+                                $100 - $200
+                            </span>
+                        </Typography> */}
+                {/* </div>
 
-                <Slider onChange={(e) => console.log(e.target.value)} />
+                <Slider /> */}
             </Wrapper>
         </Container>
     );

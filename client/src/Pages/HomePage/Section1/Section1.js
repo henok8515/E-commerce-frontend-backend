@@ -49,15 +49,15 @@ function Section1() {
                     <div
                         className="brand-images-row"
                         style={{
-                            // marginTop: '10px',
+                            marginTop: '10px',
                             display: 'flex',
                             flex: 1,
                             justifyContent: 'center',
                             alignItems: 'center',
                             height: '100px',
-                            borderLeft: '0.1px solid #424b54',
-                            borderTop: '0.1px solid #424b54',
-                            borderBottom: '0.1px solid #424b54'
+                            borderLeft: '0.1px solid black',
+                            borderTop: '0.1px solid black',
+                            borderBottom: '0.1px solid black'
                         }}
                     >
                         <img src={logo} alt="image1" />
