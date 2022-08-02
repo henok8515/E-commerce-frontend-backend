@@ -11,7 +11,7 @@ import {
     LogoImg,
     Container
 } from './style';
-function Header() {
+function Header({ setCurrentUser, currentUser }) {
     const [navBar, setNavColor] = useState(false);
     const [sideon] = useState(false);
 
@@ -28,6 +28,7 @@ function Header() {
             };
         }, [location]);
     }
+    console.log(currentUser.userName, 'headeer');
 
     const changeColor = () => {
         if (window.scrollY >= 70) {
@@ -124,10 +125,14 @@ function Header() {
                         </div>
                     </div>
                 )}
+
+                <p>{currentUser.userName}</p>
                 {/* <button onClick={() => setSideOn((sideon) => !sideon)}>
                     {sideon ? 's' : 'H'}
                 </button> */}
-                <Link to="/login">SignOut</Link>
+                <Link onClick={() => setCurrentUser({})} to="/login">
+                    SignOut
+                </Link>
             </SearchContainer>
         </Container>
     );
