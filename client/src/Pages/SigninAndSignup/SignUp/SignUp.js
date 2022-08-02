@@ -2,8 +2,7 @@ import { Typography } from '@mui/material';
 import axios from 'axios';
 import React, { useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
-import Image from '../../../Assets/Images/login-bg.png';
-
+import Image from '../../../Assets/Images/register-bg.png';
 const SignUp = ({ setCurrentUser }) => {
     const [userData, setUserData] = useState({
         userName: '',
@@ -16,7 +15,7 @@ const SignUp = ({ setCurrentUser }) => {
     const handleSubmit = (event) => {
         event.preventDefault();
         axios
-            .post('http://localhost:5000/api/user/login', {
+            .post('http://localhost:5000/api/user/register', {
                 userName: userData.userName,
                 email: userData.email,
                 password: userData.password
@@ -34,6 +33,13 @@ const SignUp = ({ setCurrentUser }) => {
             .catch((err) => console.log(err));
     };
     const values = [
+        {
+            placeholder: 'User Name',
+            name: 'userName',
+            type: 'text',
+            value: userData.userName,
+            errorMessage: ''
+        },
         {
             placeholder: 'Email',
             name: 'email',
@@ -53,7 +59,7 @@ const SignUp = ({ setCurrentUser }) => {
     return (
         <div className="flex h-screen  bg-white justify-center items-center ">
             <div
-                className=" flex-1  flex-col flex h-1/2 w-2/6 justify-around
+                className=" flex-1  flex-col flex h-2/3 w-2/6 justify-around
              items-center "
             >
                 <form
@@ -65,7 +71,7 @@ const SignUp = ({ setCurrentUser }) => {
                         className="mb-52
                     "
                     >
-                        Login
+                        Register
                     </Typography>
                     {values.map((value) => (
                         <div key={value.name} className="w-4/6">
@@ -86,15 +92,15 @@ const SignUp = ({ setCurrentUser }) => {
                         type="submit"
                         className=" w-2/3 inline-block px-6 py-2.5 bg-slate-900 text-white font-medium text-xs leading-normal uppercase rounded shadow-md hover:bg-blue-700 hover:shadow-lg focus:bg-blue-700 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-blue-800 active:shadow-lg transition duration-150 ease-in-out"
                     >
-                        Login
+                        Register
                     </button>
-                    <Link to="/register">don't have an account Register </Link>
+                    <Link to="/login">already have an account Login </Link>
                 </form>
             </div>
             <div
                 style={{
                     backgroundImage: `url('${Image}')`,
-                    backgroundSize: 'contain'
+                    backgroundSize: 'cover'
                 }}
                 className="flex-1 h-screen "
             />
